@@ -1,5 +1,5 @@
 import { SafeAreaView, StyleSheet, StatusBar } from "react-native"
-import TopBar from "./components/TopBar"
+import TopBar from "./src/components/TopBar"
 
 export default function App() {
     return (

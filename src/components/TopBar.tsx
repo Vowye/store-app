@@ -3,7 +3,10 @@ import { StyleSheet, Image, View } from "react-native"
 const TopBar = () => {
     return (
         <View style={styles.container}>
-            <Image style={styles.icon} source={require("../assets/cart.png")} />
+            <Image
+                style={styles.icon}
+                source={require("../../assets/cart.png")}
+            />
         </View>
     )
 }
