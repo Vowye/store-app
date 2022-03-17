@@ -1,13 +1,13 @@
-import { useNavigation } from "@react-navigation/native"
-import { StyleSheet, Image, View, Pressable } from "react-native"
+import { useNavigation } from "@react-navigation/native";
+import { StyleSheet, Image, View, Pressable } from "react-native";
 
 const TopBar = () => {
-    const navigation = useNavigation()
+    const navigation = useNavigation();
     return (
         <View style={styles.container}>
             <Pressable
                 onPress={() => {
-                    navigation.navigate("Home" as never, {} as never)
+                    navigation.navigate("Home" as never, {} as never);
                 }}
             >
                 <Image
@@ -17,7 +17,7 @@ const TopBar = () => {
             </Pressable>
             <Pressable
                 onPress={() => {
-                    navigation.navigate("Cart" as never, {} as never)
+                    navigation.navigate("Cart" as never, {} as never);
                 }}
             >
                 <Image
@@ -26,8 +26,8 @@ const TopBar = () => {
                 />
             </Pressable>
         </View>
-    )
-}
+    );
+};
 
 const styles = StyleSheet.create({
     container: {
@@ -42,6 +42,6 @@ const styles = StyleSheet.create({
     icon: {
         margin: 5,
     },
-})
+});
 
-export default TopBar
+export default TopBar;
