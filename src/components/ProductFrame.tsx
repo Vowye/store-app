@@ -4,13 +4,15 @@ import CartContext from "../context/CartContext";
 import Product from "../types/Product";
 
 const ProductFrame = ({ item }: { item: Product }) => {
-    const { products, setProducts } = useContext(CartContext);
+    const { products, addNewProductToCart, removeProductFromCart } =
+        useContext(CartContext);
 
     const checkIfProductIsOnCart = (product: Product) => {
-        const isProductOnCart = products.filter(
+        const matchingProducts = products.filter(
             (listItem) => product.id === listItem.id
         );
-        return isProductOnCart.length;
+        const isOnCart = matchingProducts.length > 0;
+        return isOnCart;
     };
 
     return (
@@ -26,19 +28,14 @@ const ProductFrame = ({ item }: { item: Product }) => {
                         color="red"
                         title="Remove From Cart"
                         onPress={() => {
-                            setProducts(
-                                products.filter((product) => {
-                                    return item.id !== product.id;
-                                })
-                            );
+                            removeProductFromCart(item);
                         }}
                     />
                 ) : (
                     <Button
                         title="Add to cart"
                         onPress={() => {
-                            console.log(checkIfProductIsOnCart(item));
-                            setProducts([...products, item]);
+                            addNewProductToCart(item);
                         }}
                     />
                 )}

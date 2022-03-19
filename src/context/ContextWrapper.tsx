@@ -14,9 +14,26 @@ const ContextWrapper = (props: ContextWrapperProps) => {
         setCartCount(products.length);
     }, [products]);
 
+    const addNewProductToCart = (product: Product) => {
+        setProducts([...products, product]);
+    };
+
+    const removeProductFromCart = (product: Product) => {
+        setProducts(
+            products.filter(() => {
+                return product.id !== product.id;
+            })
+        );
+    };
+
     return (
         <CartContext.Provider
-            value={{ products, setProducts, cartCount, setCartCount }}
+            value={{
+                products,
+                addNewProductToCart,
+                removeProductFromCart,
+                cartCount,
+            }}
         >
             {props.children}
         </CartContext.Provider>

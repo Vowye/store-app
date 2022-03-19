@@ -11,7 +11,8 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import CartContext from "../context/CartContext";
 
 const Cart = () => {
-    const { products, setProducts, cartCount } = useContext(CartContext);
+    const { products, removeProductFromCart, cartCount } =
+        useContext(CartContext);
     return (
         <>
             <ScrollView>
@@ -25,11 +26,7 @@ const Cart = () => {
                             <Text style={styles.itemTitle}>{elmnt.title}</Text>
                             <Pressable
                                 onPress={() => {
-                                    setProducts(
-                                        products.filter((product) => {
-                                            return elmnt.id !== product.id;
-                                        })
-                                    );
+                                    removeProductFromCart(elmnt);
                                 }}
                             >
                                 <Image
