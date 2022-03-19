@@ -7,6 +7,6 @@ export default interface Products {
     image: string;
     rating: {
         rate: number;
-        rateCount: number;
+        count: number;
     };
 }

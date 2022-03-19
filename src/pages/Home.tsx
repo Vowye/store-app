@@ -5,7 +5,6 @@ import {
     StyleSheet,
     View,
     Image,
-    ScrollView,
     FlatList,
     Button,
 } from "react-native";
@@ -40,7 +39,7 @@ const Home = () => {
                             <Button
                                 title="Add to cart"
                                 onPress={() => {
-                                    console.log("action");
+                                    setProducts([...products, item]);
                                 }}
                             />
                         </View>
@@ -53,7 +52,7 @@ const Home = () => {
 
 const styles = StyleSheet.create({
     container: {
-        alignItems: "center",
+        justifyContent: "space-between",
     },
     table: {
         paddingTop: 10,
@@ -62,17 +61,18 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 4,
         marginBottom: 20,
+        flexDirection: "column",
+        justifyContent: "space-between",
         alignItems: "center",
         borderColor: "#a6855c",
         marginHorizontal: 10,
-        width: 160,
+        width: "45%",
         padding: 10,
         backgroundColor: "white",
     },
     productImage: { width: 100, height: 100 },
     itemTitle: {
         paddingVertical: 6,
-        maxHeight: 50,
     },
 });
 
