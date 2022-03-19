@@ -1,7 +1,11 @@
 import { useNavigation } from "@react-navigation/native";
+import { useContext } from "react";
 import { StyleSheet, Image, View, Pressable } from "react-native";
+import CartContext from "../context/CartContext";
 
 const TopBar = () => {
+    const { cartCount } = useContext(CartContext);
+
     const navigation = useNavigation();
     return (
         <View style={styles.container}>
@@ -20,10 +24,17 @@ const TopBar = () => {
                     navigation.navigate("Cart" as never, {} as never);
                 }}
             >
-                <Image
-                    style={styles.icon}
-                    source={require("../../assets/cart.png")}
-                />
+                {cartCount > 0 ? (
+                    <Image
+                        style={styles.icon}
+                        source={require("../../assets/cart-loaded.png")}
+                    />
+                ) : (
+                    <Image
+                        style={styles.icon}
+                        source={require("../../assets/cart.png")}
+                    />
+                )}
             </Pressable>
         </View>
     );
