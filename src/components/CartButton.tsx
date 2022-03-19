@@ -1,27 +1,20 @@
 import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { useContext } from "react";
 import { StyleSheet, Image, View, Pressable } from "react-native";
 import CartContext from "../context/CartContext";
+import { RootStackParamList } from "../types/Routes";
 
-const TopBar = () => {
+const CartButton = () => {
     const { cartCount } = useContext(CartContext);
 
-    const navigation = useNavigation();
+    const navigation =
+        useNavigation<NativeStackNavigationProp<RootStackParamList>>();
     return (
         <View style={styles.container}>
             <Pressable
                 onPress={() => {
-                    navigation.navigate("Home" as never, {} as never);
-                }}
-            >
-                <Image
-                    style={styles.icon}
-                    source={require("../../assets/arrow-back.png")}
-                />
-            </Pressable>
-            <Pressable
-                onPress={() => {
-                    navigation.navigate("Cart" as never, {} as never);
+                    navigation.navigate("Cart");
                 }}
             >
                 {cartCount > 0 ? (
@@ -42,17 +35,12 @@ const TopBar = () => {
 
 const styles = StyleSheet.create({
     container: {
-        width: "100%",
-        backgroundColor: "#d7d0c0",
         alignItems: "center",
         flexDirection: "row",
-        justifyContent: "space-between",
-        borderWidth: 1,
-        borderColor: "#a6855c",
     },
     icon: {
         margin: 5,
     },
 });
 
-export default TopBar;
+export default CartButton;
