@@ -1,7 +1,7 @@
 import axios from "axios";
-import Products from "../types/Products";
+import Product from "../types/Product";
 
-export const getAllProducts = async (): Promise<Products[]> => {
+export const getAllProducts = async (): Promise<Product[]> => {
     try {
         const response = await axios.get("https://fakestoreapi.com/products");
         return response.data;

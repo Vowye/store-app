@@ -1,9 +1,9 @@
 import React from "react";
-import Products from "../types/Products";
+import Product from "../types/Product";
 
 const CartContext = React.createContext({
-    products: [] as Products[],
-    setProducts: (product: Products[]) => {},
+    products: [] as Product[],
+    setProducts: (product: Product[]) => {},
     cartCount: 0,
     setCartCount: (index: number) => {},
 });

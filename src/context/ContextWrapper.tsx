@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import CartContext from "./CartContext";
-import Products from "../types/Products";
+import Product from "../types/Product";
 
 interface ContextWrapperProps {
     children: React.ReactNode;
 }
 
 const ContextWrapper = (props: ContextWrapperProps) => {
-    const [products, setProducts] = useState<Products[]>([] as Products[]);
+    const [products, setProducts] = useState<Product[]>([] as Product[]);
     const [cartCount, setCartCount] = useState<number>(0);
 
     useEffect(() => {
