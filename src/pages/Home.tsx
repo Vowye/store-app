@@ -1,13 +1,5 @@
-import { useContext, useState } from "react";
-import {
-    SafeAreaView,
-    Text,
-    StyleSheet,
-    View,
-    Image,
-    FlatList,
-    Button,
-} from "react-native";
+import { useState } from "react";
+import { SafeAreaView, StyleSheet, FlatList } from "react-native";
 import { getAllProducts } from "../api/api";
 import ProductFrame from "../components/ProductFrame";
 import Product from "../types/Product";

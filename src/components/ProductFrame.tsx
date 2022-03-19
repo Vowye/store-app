@@ -1,11 +1,17 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Button, Image, StyleSheet, Text, View } from "react-native";
 import CartContext from "../context/CartContext";
 import Product from "../types/Product";
 
 const ProductFrame = ({ item }: { item: Product }) => {
     const { products, setProducts } = useContext(CartContext);
-    const [isOnCart, setIsOnCart] = useState<boolean>(false);
+
+    const checkIfProductIsOnCart = (product: Product) => {
+        const isProductOnCart = products.filter(
+            (listItem) => product.id === listItem.id
+        );
+        return isProductOnCart.length;
+    };
 
     return (
         <>
@@ -15,7 +21,7 @@ const ProductFrame = ({ item }: { item: Product }) => {
                     style={styles.productImage}
                 ></Image>
                 <Text style={styles.itemTitle}>{item.title}</Text>
-                {isOnCart ? (
+                {checkIfProductIsOnCart(item) ? (
                     <Button
                         color="red"
                         title="Remove From Cart"
@@ -25,15 +31,14 @@ const ProductFrame = ({ item }: { item: Product }) => {
                                     return item.id !== product.id;
                                 })
                             );
-                            setIsOnCart(false);
                         }}
                     />
                 ) : (
                     <Button
                         title="Add to cart"
                         onPress={() => {
+                            console.log(checkIfProductIsOnCart(item));
                             setProducts([...products, item]);
-                            setIsOnCart(true);
                         }}
                     />
                 )}
