@@ -20,8 +20,8 @@ const ContextWrapper = (props: ContextWrapperProps) => {
 
     const removeProductFromCart = (product: Product) => {
         setProducts(
-            products.filter(() => {
-                return product.id !== product.id;
+            products.filter((productFromCart) => {
+                return product.id !== productFromCart.id;
             })
         );
     };
