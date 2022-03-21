@@ -1,7 +1,10 @@
 import React from "react";
-import Home from "../pages/Home";
 import TestRenderer from "react-test-renderer";
 
+import Home from "../pages/Home";
+
 it("renders", () => {
-    TestRenderer.create(<Home />);
+    TestRenderer.act(() => {
+        TestRenderer.create(<Home />);
+    });
 });
