@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { SafeAreaView, StyleSheet, FlatList } from "react-native";
 import { getAllProducts } from "../api/api";
 import ProductFrame from "../components/ProductFrame";
