@@ -1,12 +1,23 @@
 # Welcome to store-app!
 
-An app built on react-native 
+An app built on react-native
 
 ## To install all the necessary packages
->`yarn`
+
+> `yarn`
 
 ## To run this app
->`yarn start`
+
+> `yarn start`
 
 ## To run tests
->`yarn test`
+
+> `yarn test`
+
+## Login on Expo
+
+> `expo login`
+
+## Buil android app with expo
+
+> `expo build:android -t apk`
