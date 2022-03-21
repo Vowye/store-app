@@ -17,6 +17,9 @@ const Cart = () => {
         <>
             <ScrollView>
                 <SafeAreaView style={styles.container}>
+                    <Text style={styles.itemsCounter}>
+                        Products on cart: {cartCount}
+                    </Text>
                     {products.map((elmnt, idx) => (
                         <View style={styles.productContainer} key={idx}>
                             <Image
@@ -68,6 +71,9 @@ const styles = StyleSheet.create({
     },
     closeIcon: {
         marginRight: 10,
+    },
+    itemsCounter: {
+        marginBottom: 10,
     },
 });
 
