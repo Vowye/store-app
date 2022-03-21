@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { Button, Image, StyleSheet, Text, View } from "react-native";
 import CartContext from "../context/CartContext";
 import Product from "../types/Product";

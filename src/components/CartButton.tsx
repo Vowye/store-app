@@ -1,6 +1,6 @@
+import React, { useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { useContext } from "react";
 import { StyleSheet, Image, View, Pressable } from "react-native";
 import CartContext from "../context/CartContext";
 import { RootStackParamList } from "../types/Routes";
@@ -10,6 +10,7 @@ const CartButton = () => {
 
     const navigation =
         useNavigation<NativeStackNavigationProp<RootStackParamList>>();
+
     return (
         <View style={styles.container}>
             <Pressable
