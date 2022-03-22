@@ -18,6 +18,6 @@ An app built on react-native
 
 > `expo login`
 
-## Buil android app with expo
+## Build android app with expo
 
 > `expo build:android -t apk`
